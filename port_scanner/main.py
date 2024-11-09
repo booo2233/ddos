@@ -1,4 +1,4 @@
-from port_scanner import *
+from port_scannerv1 import *
 from termcolor import colored
 # Main function to scan all ports and perform the best-suited request
 def main():
