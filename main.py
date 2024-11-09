@@ -1,4 +1,5 @@
 from port_scanner import *
+from termcolor import colored
 # Main function to scan all ports and perform the best-suited request
 def main():
     host = input("Enter the IP address or hostname to scan: ")
@@ -6,12 +7,12 @@ def main():
     open_ports = scan_ports(host, port_range)
 
     if not open_ports:
-        print("\nNo open ports detected; attempting to ping the host.")
+        print(colored("\nNo open ports detected; attempting to ping the host.", "red"))
         ping_host(host)
         return
 
     request_type = suggest_request_type(open_ports)
-    print(f"\nSuggested request type based on open ports: {request_type}")
+    print(colored(f"\nSuggested request type based on open ports: {request_type}", "blue"))
 
     # Send the appropriate request based on detected open ports
     if request_type == "HTTP":
@@ -24,5 +25,5 @@ def main():
         ping_host(host)
 
 if __name__ == "__main__":
-    
+
      main()
