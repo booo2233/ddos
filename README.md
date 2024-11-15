@@ -1,3 +1,2 @@
 # ddos
-# this is ddos program its under work
-
+# this project is close 
